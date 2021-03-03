@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class NeuHome extends StatefulWidget {
   @override
@@ -6,13 +7,14 @@ class NeuHome extends StatefulWidget {
 }
 
 class _NeuHomeState extends State<NeuHome> {
-  
+  double _heightUnit;
+  double _widthUnit;
 
   @override
   Widget build(BuildContext context) {
     // Calculate units from Height and Width of Device
-    final _heightUnit = MediaQuery.of(context).size.height / 100;
-    final _widthUnit = MediaQuery.of(context).size.width / 100;
+    _heightUnit = MediaQuery.of(context).size.height / 100;
+    _widthUnit = MediaQuery.of(context).size.width / 100;
 
     return Scaffold(
         backgroundColor: Color(0XFF2e2e2e),
@@ -30,11 +32,16 @@ class _NeuHomeState extends State<NeuHome> {
                   ),
                   child: Row(
                     children: [
-                      Icon(Icons.arrow_back),
+                      _neuButton(Icons.arrow_back),
                       Spacer(),
-                      Text("Playing Now..."),
+                      Text("Playing Now...",
+                          style: TextStyle(
+                            color: Colors.white54,
+                            letterSpacing: 0.25,
+                            fontWeight: FontWeight.bold,
+                          )),
                       Spacer(),
-                      Icon(Icons.arrow_forward)
+                      _neuButton(Icons.menu)
                     ],
                   )),
               SizedBox(
@@ -42,16 +49,31 @@ class _NeuHomeState extends State<NeuHome> {
                 height: 0.5 * _heightUnit,
               ),
               Container(
-                height: 200,
-                width: 200,
-                decoration: BoxDecoration(shape: BoxShape.circle),
+                height: 30 * _heightUnit,
+                width: 60 * _widthUnit,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color(0XFF212121),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color(0XFF1c1c1c),
+                      offset: Offset(15.0, 15.0),
+                      blurRadius: 20.0,
+                    ),
+                    BoxShadow(
+                      color: Color(0XFF404040),
+                      offset: Offset(-15.0, -15.0),
+                      blurRadius: 20.0,
+                    ),
+                  ],
+                ),
                 child: Padding(
-                  padding: EdgeInsets.all(5),
+                  padding: EdgeInsets.all(8.0),
                   child: Container(
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
-                        image: AssetImage("assets/images/burna.png"),
+                        image: AssetImage("assets/images/em.jpg"),
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -120,5 +142,49 @@ class _NeuHomeState extends State<NeuHome> {
             ],
           ),
         ));
+  }
+
+  _neuButton(IconData icon) {
+    return Container(
+      decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: Color(0XFF2e2e2e),
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            colors: [Color(0XFF1c1c1c), Color(0XFF383838)],
+          ),
+          boxShadow: [
+            new BoxShadow(
+              color: Color(0XFF1c1c1c),
+              offset: Offset(5.0, 5.0),
+              blurRadius: 10.0,
+            ),
+            new BoxShadow(
+              color: Color(0XFF404040),
+              offset: Offset(-5.0, -5.0),
+              blurRadius: 10.0,
+            ),
+          ]),
+      child: Padding(
+        padding: const EdgeInsets.all(3.0),
+        child: Container(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                colors: [Color(0XFF303030), Color(0XFF1a1a1a)]),
+          ),
+          child: Padding(
+            padding: EdgeInsets.all(5 * _widthUnit), //_widthUnit
+            child: FaIcon(
+              icon,
+              color: Colors.white54,
+              // size: 3.6 *  _widthUnit, // _widthUnit
+              size: 3.6 * (MediaQuery.of(context).size.height / 100) ,
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
