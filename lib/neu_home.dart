@@ -141,6 +141,43 @@ class _NeuHomeState extends State<NeuHome> {
                         TextStyle(fontSize: 13, color: Colors.transparent),
                     boxStyle: FlutterSliderTooltipBox(
                         decoration: BoxDecoration(color: Colors.transparent))),
+                // trackbar: slider bar on which Handler moves
+                trackBar: FlutterSliderTrackBar(
+                  inactiveTrackBar: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.black12,
+                    border: Border.all(width: 10, color: Colors.black87),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0XFF171717),
+                        offset: Offset(-3.0, -3.0),
+                        blurRadius: 3.0,
+                      ),
+                      BoxShadow(
+                        color: Color(0XFF404040),
+                        offset: Offset(1.0, 1.0),
+                        blurRadius: 0.5,
+                      ),
+                    ],
+                  ),
+                  activeTrackBar: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0XFF171717),
+                        offset: Offset(-3.0, -3.0),
+                        blurRadius: 3.0,
+                      ),
+                      BoxShadow(
+                        color: Color(0XFF404040),
+                        offset: Offset(1.0, 1.0),
+                        blurRadius: 3.0,
+                      ),
+                    ],
+                    gradient: LinearGradient(colors: [Colors.red, Colors.amber]),
+                  ),
+                ),
+                // Handler: Draggable slider button
                 handler: FlutterSliderHandler(
                   child: Container(
                     decoration: BoxDecoration(
