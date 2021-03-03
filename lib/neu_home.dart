@@ -16,22 +16,19 @@ class _NeuHomeState extends State<NeuHome> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-
-        child: Column(
- 
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Neumorphic Design',
-            ),
- 
-          ],
-        ),
-      ),
-    );
+      body: Container(
+        child: Padding(
+          padding: EdgeInsets.all(5),
+          child: Row(
+            children: [
+              Icon(Icons.arrow_back),
+              Spacer(),
+              Text("Playing Now..."),
+              Spacer(),
+              Icon(Icons.arrow_forward)
+            ],
+          )
+          ),
+      ));
   }
 }
