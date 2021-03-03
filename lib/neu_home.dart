@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_xlider/flutter_xlider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class NeuHome extends StatefulWidget {
@@ -130,15 +131,18 @@ class _NeuHomeState extends State<NeuHome> {
                   ],
                 ),
               ),
-              Slider(
-                value: 2,
-                min: 0,
+              FlutterSlider(
+                values: [_lowerValue, _uppperValue],
                 max: 100,
-                // divisions: 5,
-                onChanged: (v) => {},
+                min: 0,
+                tooltip: FlutterSliderTooltip(
+                  textStyle: TextStyle(fontSize: 13, color: Colors.transparent),
+                  boxStyle: FlutterSliderTooltipBox(
+                  decoration: BoxDecoration(color: Colors.transparent))
+                ),
               ),
               SizedBox(
-                height: 2 * _heightUnit,
+                height: 4 * _heightUnit,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 12 * _widthUnit),
