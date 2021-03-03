@@ -9,6 +9,8 @@ class NeuHome extends StatefulWidget {
 class _NeuHomeState extends State<NeuHome> {
   double _heightUnit;
   double _widthUnit;
+  double _lowerValue = 100;
+  double _uppperValue;
 
   @override
   Widget build(BuildContext context) {
@@ -108,12 +110,23 @@ class _NeuHomeState extends State<NeuHome> {
                 height: 2 * _heightUnit,
               ), // Calculate later
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10),
+                padding: EdgeInsets.symmetric(horizontal: 3 * _widthUnit),
                 child: Row(
                   children: [
-                    Text("01:35"),
+                    Text(
+                        (_lowerValue / 60).toStringAsFixed(0) +
+                        ":" +
+                        (_lowerValue % 60).toStringAsFixed(0),
+                      style: TextStyle(
+                        color: Colors.white70,
+                      ),
+                    ),
                     Spacer(),
-                    Text("3:50"),
+                    Text("3:50",
+                      style: TextStyle(
+                      color: Colors.white70,
+                      )
+                    ),
                   ],
                 ),
               ),
@@ -180,7 +193,7 @@ class _NeuHomeState extends State<NeuHome> {
               icon,
               color: Colors.white54,
               // size: 3.6 *  _widthUnit, // _widthUnit
-              size: 3.6 * (MediaQuery.of(context).size.height / 100) ,
+              size: 3.6 * (MediaQuery.of(context).size.height / 100),
             ),
           ),
         ),
