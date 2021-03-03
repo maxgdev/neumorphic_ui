@@ -10,8 +10,8 @@ class NeuHome extends StatefulWidget {
 class _NeuHomeState extends State<NeuHome> {
   double _heightUnit;
   double _widthUnit;
-  double _lowerValue = 100;
-  double _uppperValue;
+  double _lowerValue = 1;
+  double _upperValue = 180;
 
   @override
   Widget build(BuildContext context) {
@@ -115,15 +115,16 @@ class _NeuHomeState extends State<NeuHome> {
                 child: Row(
                   children: [
                     Text(
-                        (_lowerValue / 60).toStringAsFixed(0) +
-                        ":" +
-                        (_lowerValue % 60).toStringAsFixed(0),
+                      (_lowerValue / 60).toStringAsFixed(0) +
+                          ":" +
+                          (_lowerValue % 60).toStringAsFixed(0),
                       style: TextStyle(
                         color: Colors.white70,
                       ),
                     ),
                     Spacer(),
-                    Text("3:50",
+                    Text(
+                      "2:40",
                       style: TextStyle(
                       color: Colors.white70,
                       ),
@@ -132,14 +133,65 @@ class _NeuHomeState extends State<NeuHome> {
                 ),
               ),
               FlutterSlider(
-                values: [_lowerValue, _uppperValue],
+                values: [_lowerValue, _upperValue],
                 max: 100,
                 min: 0,
                 tooltip: FlutterSliderTooltip(
-                  textStyle: TextStyle(fontSize: 13, color: Colors.transparent),
-                  boxStyle: FlutterSliderTooltipBox(
-                  decoration: BoxDecoration(color: Colors.transparent))
-                ),
+                    textStyle:
+                        TextStyle(fontSize: 13, color: Colors.transparent),
+                    boxStyle: FlutterSliderTooltipBox(
+                        decoration: BoxDecoration(color: Colors.transparent))),
+                handler: FlutterSliderHandler(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(0XFF1c1c1c),
+                      shape: BoxShape.circle,
+                    ),
+                    child: Container(
+                      padding: EdgeInsets.all(11),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Color(0XFF212121),
+                        boxShadow: [
+                          new BoxShadow(
+                            color: Color(0XFF1c1c1c),
+                            offset: Offset(3.0, 3.0),
+                            blurRadius: 5.0,
+                          ),
+                          new BoxShadow(
+                            color: Color(0XFF404040),
+                            offset: Offset(-3.0, -3.0),
+                            blurRadius: 5.0,
+                          ),
+                        ],
+                      ),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.amber,
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            new BoxShadow(
+                              color: Color(0XFF1c1c1c),
+                              offset: Offset(5.0, 5.0),
+                              blurRadius: 10.0,
+                            ),
+                            new BoxShadow(
+                              color: Color(0XFF404040),
+                              offset: Offset(-5.0, -5.0),
+                              blurRadius: 10.0,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),        
+                onDragging: (handlerIndex, lowerValue, upperValue) {
+                  setState(() {
+                    _lowerValue = lowerValue;
+                    _upperValue = upperValue;
+                  });
+                },
               ),
               SizedBox(
                 height: 4 * _heightUnit,
