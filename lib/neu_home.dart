@@ -190,12 +190,12 @@ class _NeuHomeState extends State<NeuHome> {
                         shape: BoxShape.circle,
                         color: Color(0XFF212121),
                         boxShadow: [
-                          new BoxShadow(
+                          BoxShadow(
                             color: Color(0XFF1c1c1c),
                             offset: Offset(3.0, 3.0),
                             blurRadius: 5.0,
                           ),
-                          new BoxShadow(
+                          BoxShadow(
                             color: Color(0XFF404040),
                             offset: Offset(-3.0, -3.0),
                             blurRadius: 5.0,
@@ -207,12 +207,12 @@ class _NeuHomeState extends State<NeuHome> {
                           color: Colors.amber,
                           shape: BoxShape.circle,
                           boxShadow: [
-                            new BoxShadow(
+                            BoxShadow(
                               color: Color(0XFF1c1c1c),
                               offset: Offset(5.0, 5.0),
                               blurRadius: 10.0,
                             ),
-                            new BoxShadow(
+                            BoxShadow(
                               color: Color(0XFF404040),
                               offset: Offset(-5.0, -5.0),
                               blurRadius: 10.0,
@@ -263,12 +263,12 @@ class _NeuHomeState extends State<NeuHome> {
             colors: [Color(0XFF1c1c1c), Color(0XFF383838)],
           ),
           boxShadow: [
-            new BoxShadow(
+            BoxShadow(
               color: Color(0XFF1c1c1c),
               offset: Offset(5.0, 5.0),
               blurRadius: 10.0,
             ),
-            new BoxShadow(
+            BoxShadow(
               color: Color(0XFF404040),
               offset: Offset(-5.0, -5.0),
               blurRadius: 10.0,
@@ -289,7 +289,7 @@ class _NeuHomeState extends State<NeuHome> {
               icon,
               color: Colors.white54,
               // size: 3.6 *  _widthUnit, // _widthUnit
-              size: 3.6 * (MediaQuery.of(context).size.height / 100),
+              size: 3.0 * (MediaQuery.of(context).size.height / 100),
             ),
           ),
         ),
