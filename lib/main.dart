@@ -10,8 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
        debugShowCheckedModeBanner: false,
-      title: 'Neumorphic Design',
-      home: NeuHome(title: 'Neumorphic Design'),
+      home: NeuHome(),
     );
   }
 }
