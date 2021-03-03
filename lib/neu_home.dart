@@ -125,7 +125,7 @@ class _NeuHomeState extends State<NeuHome> {
                     Text("3:50",
                       style: TextStyle(
                       color: Colors.white70,
-                      )
+                      ),
                     ),
                   ],
                 ),
@@ -141,14 +141,17 @@ class _NeuHomeState extends State<NeuHome> {
                 height: 2 * _heightUnit,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(horizontal: 12 * _widthUnit),
                 child: Row(
                   children: [
-                    Icon(Icons.arrow_back_rounded),
+                    _neuButton(FontAwesomeIcons.backward),
+                    // Icon(Icons.arrow_back_rounded),
                     Spacer(),
-                    Icon(Icons.play_arrow_rounded),
+                    // Icon(Icons.play_arrow_rounded),
+                    _neuButton(FontAwesomeIcons.play),
                     Spacer(),
-                    Icon(Icons.arrow_forward_rounded),
+                    // Icon(Icons.arrow_forward_rounded),
+                    _neuButton(FontAwesomeIcons.forward),
                   ],
                 ),
               ),
