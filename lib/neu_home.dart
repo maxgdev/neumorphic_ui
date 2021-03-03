@@ -54,9 +54,35 @@ class _NeuHomeState extends State<NeuHome> {
             SizedBox(height: 10,),
             RichText(
               text: TextSpan(
-                text: "Burna Boy: Ye Yo"
+                text: "Ye Yo",
+                style: TextStyle(
+                  fontSize: 25,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                ),
               )
               ),
+              SizedBox(height: 10,), // Calculate later
+              Text(
+                "Burna Boy",
+                style: TextStyle(
+                fontSize: 20,
+                color: Colors.black,
+                fontWeight: FontWeight.w400,
+                ),
+              ),
+              SizedBox(height: 10,), // Calculate later
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: Row(
+                  children: [
+                    Text("01:35"),
+                    Spacer(),
+                    Text("3:50"),
+                  ],
+                ),
+              ),
+
           ],
         ),
           
