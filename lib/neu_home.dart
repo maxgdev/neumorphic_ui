@@ -17,18 +17,49 @@ class _NeuHomeState extends State<NeuHome> {
 
     return Scaffold(
       body: Container(
-        child: Padding(
-          padding: EdgeInsets.all(5),
-          child: Row(
-            children: [
-              Icon(Icons.arrow_back),
-              Spacer(),
-              Text("Playing Now..."),
-              Spacer(),
-              Icon(Icons.arrow_forward)
-            ],
-          )
-          ),
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(5),
+              child: Row(
+                children: [
+                  Icon(Icons.arrow_back),
+                  Spacer(),
+                  Text("Playing Now..."),
+                  Spacer(),
+                  Icon(Icons.arrow_forward)
+                ],
+              )
+              ),
+            SizedBox(height: 10,),
+            Container(
+              height: 200,
+              width: 200,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle
+              ),
+              child: Padding(
+                padding: EdgeInsets.all(5),
+                child: Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/burna.png"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 10,),
+            RichText(
+              text: TextSpan(
+                text: "Burna Boy: Ye Yo"
+              )
+              ),
+          ],
+        ),
+          
       ));
   }
 }
