@@ -86,10 +86,10 @@ class _NeuHomeState extends State<NeuHome> {
               ),
               RichText(
                   text: TextSpan(
-                text: "Ye Yo",
+                text: "Crack a Bottle",
                 style: TextStyle(
-                  fontSize: 25,
-                  color: Colors.black,
+                  fontSize: 3.5 * _heightUnit,
+                  color: Colors.white70,
                   fontWeight: FontWeight.w600,
                 ),
               )),
@@ -97,10 +97,10 @@ class _NeuHomeState extends State<NeuHome> {
                 height: 1.5 * _heightUnit,
               ), // Calculate later
               Text(
-                "Burna Boy",
+                "Eminem, Dr. Dre & 50 Cent",
                 style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.black,
+                  fontSize: 1.6 * _heightUnit,
+                  color: Colors.white54,
                   fontWeight: FontWeight.w400,
                 ),
               ),
